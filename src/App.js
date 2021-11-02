@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import AddWord from './AddWord';
+import SearchWord from './SearchWord';
+import EmptyDictionary from './EmptyDictionary';
+import 'antd/dist/antd.css';
 
 function App() {
+  const [dictionary, setDictionary] = useState([]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style= {{marginLeft: 10, marginTop: 20}}>
+      <h1>Dictionary</h1>
+      <AddWord passChildData= {dictionary} passParentData= {setDictionary}/>
+      <SearchWord passChildData= {dictionary} passParentData= {setDictionary}/>
+      <EmptyDictionary passChildData= {dictionary} passParentData= {setDictionary}/>
     </div>
   );
 }
