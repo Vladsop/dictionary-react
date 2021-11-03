@@ -6,13 +6,9 @@ function EmptyDictionary(props) {
 
     const EmptyDictionary = () => {
         props.emptyWords([]); 
-        success("Stored words have been deleted!");
+        message.success("Stored words have been deleted!");
     }
-    
-    const success = (info) => {
-        message.success(info, 1);
-      };
-    
+        
     return(
         <React.Fragment>
         <div style={{marginLeft:120, marginBottom: 40}}>
