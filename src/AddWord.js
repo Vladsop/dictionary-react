@@ -6,10 +6,10 @@ function AddWord(props) {
     const [inputValue, setInputValue] = useState("");
 
     const AddWord = () => {
-        if (props.passChildData.includes(inputValue) === true) {
+        if (props.dictionary.includes(inputValue) === true) {
             message.warning("That word allready exists!", 1);
         } else if (inputValue.includes(" ") === false && inputValue !== "") {
-            props.passChildData.push(inputValue);
+            props.dictionary.push(inputValue);
             message.success("The word has been successfully stored in the dictionary!", 1);
             resetInputField();
         } else if (inputValue === "" ) {
@@ -29,9 +29,9 @@ function AddWord(props) {
 
     return (  
         <React.Fragment>
-            <div style= {{marginBottom: 40}}>
-            <Input type="text" value= {inputValue} placeholder= {"Add a word in the Dictionary"} style={{ width: 250 }} onChange={handleUserInput}/>
-            <Button type="primary" icon= {<PlusSquareOutlined />} onClick={AddWord}>Add</Button> 
+            <div style={{marginBottom: 40}}>
+            <Input type="text" value={inputValue} placeholder={"Add a word in the Dictionary"} style={{width: 250}} onChange={handleUserInput}/>
+            <Button type="primary" icon={<PlusSquareOutlined />} onClick={AddWord}>Add</Button> 
             </div>
         </React.Fragment>
     );

@@ -5,7 +5,7 @@ import { MinusSquareOutlined } from '@ant-design/icons';
 function EmptyDictionary(props) {
 
     const EmptyDictionary = () => {
-        props.passParentData([]); 
+        props.emptyWords([]); 
         success("Stored words have been deleted!");
     }
     
@@ -15,8 +15,8 @@ function EmptyDictionary(props) {
     
     return(
         <React.Fragment>
-        <div style= {{marginLeft:120, marginBottom: 40}}>
-            <Button type="primary" icon= {<MinusSquareOutlined />} onClick={EmptyDictionary}>Empty</Button>
+        <div style={{marginLeft:120, marginBottom: 40}}>
+            <Button type="primary" icon={<MinusSquareOutlined />} onClick={EmptyDictionary}>Empty</Button>
         </div>
         </React.Fragment> 
     )
